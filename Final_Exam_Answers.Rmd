@@ -22,7 +22,9 @@ Please put the answers for Part I next to the question number (2pts each):
 7a. Describe the two distributions (2pts).
 
 Center: Both distributions have a similar mean.
+
 Shape: Distribution A is skew-right while distribution B is roughly normal. 
+
 Spread: A has a much larger spread, with a range of $\approx18$, while B has a much smaller spread, with a range
 of $\approx3.5$
 
@@ -55,27 +57,28 @@ For each column, calculate (to two decimal places):
 
 #### a. The mean (for x and y separately; 1 pt).
 
-Data 1
+__Data 1__
+
 ```{r}
 mean(data1$x) %>% round(2)
 mean(data1$y) %>% round(2)
 ```
 
-Data 2
+__Data 2__
 
 ```{r}
 mean(data2$x) %>% round(2)
 mean(data2$y) %>% round(2)
 ```
 
-Data 3
+__Data 3__
 
 ```{r}
 mean(data3$x) %>% round(2)
 mean(data3$y) %>% round(2)
 ```
 
-Data 4
+__Data 4__
 
 ```{r}
 mean(data4$x) %>% round(2)
@@ -84,28 +87,28 @@ mean(data4$y) %>% round(2)
 
 #### b. The median (for x and y separately; 1 pt).
 
-Data 1
+__Data 1__
 
 ```{r}
 median(data1$x) %>% round(2)
 median(data1$y) %>% round(2)
 ```
 
-Data 2
+__Data 2__
 
 ```{r}
 median(data2$x) %>% round(2)
 median(data2$y) %>% round(2)
 ```
 
-Data 3
+__Data 3__
 
 ```{r}
 median(data3$x) %>% round(2)
 median(data3$y) %>% round(2)
 ```
 
-Data 4
+__Data 4__
 
 ```{r}
 median(data4$x) %>% round(2)
@@ -114,28 +117,28 @@ median(data4$y) %>% round(2)
 
 #### c. The standard deviation (for x and y separately; 1 pt).
 
-Data 1
+__Data 1__
 
 ```{r}
 sd(data1$x) %>% round(2)
 sd(data1$y) %>% round(2)
 ```
 
-Data 2
+__Data 2__
 
 ```{r}
 sd(data2$x) %>% round(2)
 sd(data2$y) %>% round(2)
 ```
 
-Data 3
+__Data 3__
 
 ```{r}
 sd(data3$x) %>% round(2)
 sd(data3$y) %>% round(2)
 ```
 
-Data 4
+__Data 4__
 
 ```{r}
 sd(data4$x) %>% round(2)
@@ -146,33 +149,34 @@ sd(data4$y) %>% round(2)
 
 #### d. The correlation (1 pt).
 
-Data 1
+__Data 1__
 
 ```{r}
 cor(data1$x, data1$y) %>% round(2)
 ```
 
-Data 2
+__Data 2__
 
 ```{r}
 cor(data2$x, data2$y) %>% round(2)
 ```
 
-Data 3
+__Data 3__
 
 ```{r}
 cor(data3$x, data3$y) %>% round(2)
 ```
 
-Data 4
+__Data 4__
+
 ```{r}
 cor(data4$x, data4$y) %>% round(2)
 ```
-```
+
 
 #### e. Linear regression equation (2 pts).
 
-Data 1
+__Data 1__
 
 ```{r}
 d1lm <- lm(y~x, data1)
@@ -181,7 +185,7 @@ summary(d1lm)
 
 $$\widehat{y}=0.5001\times x + 3.0001$$
 
-Data 2
+__Data 2__
 
 ```{r}
 d2lm <- lm(y~x, data2)
@@ -190,7 +194,7 @@ summary(d2lm)
 
 $$\widehat{y}=0.5001\times x + 3.0001$$
 
-Data 3
+__Data 3__
 
 ```{r}
 d3lm <- lm(y~x, data3)
@@ -199,7 +203,7 @@ summary(d3lm)
 
 $$\widehat{y}=0.4997\times x + 3.0025$$
 
-Data 4
+__Data 4__
 
 ```{r}
 d4lm <- lm(y~x, data4)
@@ -210,24 +214,25 @@ $$\widehat{y}=0.4999\times x + 3.0017$$
 
 #### f. R-Squared (2 pts).
 
-Dta 1
+__Data 1 (Calculated in part e)__
 
 ```{r}
 print('Adjusted R-squared:  0.6295')
 ```
 
-Data 2
+__Data 2 (Calculated in part e)__
 
 ```{r}
 print('Adjusted R-squared:  0.6292')
 ```
 
-Data 3
+__Data 3 (Calculated in part e)__
+
 ```{r}
 print('Adjusted R-squared:  0.6292')
 ```
 
-Data 4
+__Data 4 (Calculated in part e)__
 
 ```{r}
 print('Adjusted R-squared:  0.6297')
@@ -236,7 +241,7 @@ print('Adjusted R-squared:  0.6297')
 
 #### For each pair, is it appropriate to estimate a linear regression model? Why or why not? Be specific as to why for each pair and include appropriate plots! (4 pts)
 
-Data 1
+__Data 1__
 
 3 conditions for inference must be met:
 
@@ -264,7 +269,7 @@ ggplot(data1, aes(x, d1lm$residuals)) +
 
 As all the conditions for inference have been met, a linear regression model __is__ appropriate for Data 1
 
-Data 2
+__Data 2__
 
 3 conditions for inference must be met:
 
@@ -278,7 +283,7 @@ ggplot(data2, aes(x, y)) +
 
 A linear regression model is __NOT__ appropriate for Data 2
 
-Data 3
+__Data 3__
 
 3 conditions for inference must be met:
 
@@ -299,7 +304,7 @@ qqline(d3lm$residuals)
 
 A linear regression model is __NOT__ appropriate for Data 3
 
-Data 4
+__Data 4__
 
 3 conditions for inference must be met:
 
@@ -310,14 +315,6 @@ ggplot(data4, aes(x, y)) +
   geom_point() +
   geom_smooth(method=lm)
 ```
-
-2: Nearly Normal Residuals: Not Met
-
-```{r, message=FALSE}
-qqnorm(d3lm$residuals)
-qqline(d3lm$residuals)
-```
-
 
 3: Constant Variability: Not Met
 
@@ -331,10 +328,9 @@ A linear regression model is __NOT__ appropriate for Data 4
 #### Explain why it is important to include appropriate visualizations when analyzing data. Include any visualization(s) you create. (2 pts)
 
 Visiualization are a critical tool for data analysis. For example, without visualizations, it would have been difficult to determine the very important differences in
-the four data sets. All of the data sets critical values were nearly identical and they linear regression models were as well. It was not until the data (and their
-respective conditions for inference) were plotted that the differences between the data sets became apparent.
+the four data sets. All of the data sets calculated statistical values were nearly identical and their linear regression models were as well. It was not until the data (and their respective conditions for inference) were plotted that the differences between the data sets became apparent.
 
-All the calculations conducted above failed to accurately describe the differences between the data sets as well as the below graph:
+All the calculations conducted above failed to accurately describe the differences between the data sets as well as the below single graph:
 
 ```{r}
 data1 %<>%
@@ -351,21 +347,3 @@ ggplot(all.data, aes(x, y)) +
   facet_wrap('type')
   
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
